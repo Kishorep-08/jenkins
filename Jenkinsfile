@@ -14,6 +14,10 @@ pipeline {
         stage ('Deploy') {
             steps {
                 sh 'echo "Deploying the application...."'
+                input(
+                        message: 'Do you want to proceed?',
+                        ok: 'Proceed'
+                )        
             }
         }
     }
